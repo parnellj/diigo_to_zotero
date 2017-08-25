@@ -1,0 +1,36 @@
+TY  - Web Page
+KW  - programming,algorithm
+L1  - ../outputs/doc/Rooms and Mazes A Procedural Dungeon Generator - journalstuffwithstuffcom.html
+L1  - ../outputs/doc/Rooms and Mazes A Procedural Dungeon Generator - journalstuffwithstuffcom.pdf
+M1  - 12/28/2014 21:46
+N1  - self-publishing my book, Game Programming Patterns,
+N1  - Procedural generation''having the game build stuff randomly instead of using hand-authored content''is amazing when it works well.
+N1  - It needs to be fairly efficient. The generator only runs when the player enters a new level, so it doesn't have to be as super fast,
+N1  - connected
+N1  - want dungeons to not be perfect. 'Perfect' in the context of mazes and graphs (which are synonymous) means there is only one path between any two points. If you flatten out all of the windy passages, you'll discover your twisty maze is really just a tree all crumpled up. Passageways branch but never merge. Im-perfect mazes have loops and cycles''multiple paths from A to B.
+N1  - multiple distinct dungeon generation algorithms. Outdoor areas use an entirely different process. (I should probably write about that too sometime. Look, another unfulfilled promise!)  But coding a new dungeon generator from scratch for every area is a huge time sink.
+N1  - I do a fixed number of attempts to place rooms. Failure becomes more common as the dungeon gets fuller''after all, you can only fit so many rooms in a given area''but tuning this gives you some control over room density, like so:
+N1  - t picks a pair of rooms''completely ignoring how far apart they are''and starts a passageway that wanders randomly from one (hopefully) to the other. It's got a few clever checks to keep things from overlapping too much but passageways can and do cut through other rooms, cross other passages or dead end.
+N1  - description of a dungeon generator
+N1  - he /r/roguelikedev subreddit
+N1  - The magic step, and the piece I was missing, is sparseness. A normal maze fills every single square of the world, leaving no areas where you can fit a room. The trick that Jamis and FastAsUcan do here is to carve the whole maze and then uncarve the dead ends.
+N1  - Once you do that, you can start placing rooms. The process Jamis uses for this is interesting. He picks a room size and then tries to place it on every single location in the dungeon. Any location that overlaps a room or passageway is discarded. The remaining positions are 'ranked' where rooms that are near passageways are better. It then picks the best position and places the room there, and puts some doors between the room and the passage.
+N1  - Where Buck and Karcero start with the maze and then add the rooms, mine does things in the opposite order. First, it places a bunch of random rooms. Then, it iterates over every tile in the dungeon. When it finds a solid one where an open area could be, it starts running a maze generator at that point.
+N1  - After filling in the rooms and mazes, we find all of those possible connectors. These are tiles that are:      Solid rock.        Adjacent to two regions of different colors.  Here they are highlighted:
+ST  - Rooms and Mazes: A Procedural Dungeon Generator - journal.stuffwithstuff.com
+TI  - Rooms and Mazes: A Procedural Dungeon Generator - journal.stuffwithstuff.com
+UR  - http://journal.stuffwithstuff.com/2014/12/21/rooms-and-mazes/
+ID  - 0
+ER  - 
+TY  - Web Page
+KW  - literature,editorial,academic
+L1  - ../outputs/doc/The New Modesty in Literary Criticism - The Chronicle of Higher Education.html
+L1  - ../outputs/doc/The New Modesty in Literary Criticism - The Chronicle of Higher Education.pdf
+M1  - 1/12/2015 5:34
+N1  - In the past few years, several scholars have aligned themselves with the general direction of Best and Marcus's initiative, embracing empirical description, shedding a suspicious stance, and looking for methods from other places. Notable among them are Heather K. Love, an associate professor of English at the University of Pennsylvania, and Rita Felski, a professor of English at the University of Virginia and editor of the journal New Literary History.
+N1  - Indeed, the embrace of politics in academic criticism stems not from the 1960s but the 1930s. In 'Thoughts on Being Bibliographed' (1944), Edmund Wilson
+ST  - The New Modesty in Literary Criticism - The Chronicle of Higher Education
+TI  - The New Modesty in Literary Criticism - The Chronicle of Higher Education
+UR  - http://m.chronicle.com/article/article-content/150993/
+ID  - 1
+ER  - 
